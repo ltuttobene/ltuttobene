@@ -1,0 +1,151 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.771);
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* min-height: 100vh;  */
+    /* Set minimum height to 100% of the viewport height */
+    
+}
+
+header {
+    background-color: #000000;
+    padding: 12px;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+}
+
+header .spartan-icon {
+    /* Adjust the desired width */
+    width: 160px;
+    height: auto;
+    /* Automatically adjust height while maintaining the aspect ratio */
+}
+
+nav {
+    background-color: orangered;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #3a3939;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+nav ul li a i {
+    padding-right: 3px;
+    /* Add right padding to the icon */
+}
+.cal-container{
+    display: flex;
+    min-height: 100vh; 
+    /* Set minimum height to 100% of the viewport height */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Push the header and footer to the top and bottom */
+    flex-direction: column; /* Stack the header, calendar, and footer vertically on small screens */
+}
+
+#calendar {
+    max-width: 1000px; /* Adjust the width as needed */
+    width: 100%;
+    /* margin-top: 20px; */
+    margin: 20px auto;
+    flex: 1; /* Let the calendar take the available vertical space */
+    /* Add some top margin to create space between the header and the calendar */
+}
+
+.fc-daygrid-week-number{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fc-daygrid-day-number{
+    text-decoration: none;
+    color: #3a3939;
+}
+
+.fc-col-header-cell-cushion {
+    text-decoration: none;
+    color: #3a3939;
+}
+
+footer {
+    background-color: #2752fb;
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+    margin-top: 20px;
+    /* Push the footer to the bottom */
+
+}
+
+/* Updated media query for iPad Air */
+@media only screen and (max-width: 1024px) {
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    #calendar {
+        max-width: 100%;
+        width: 95%;
+    }
+    nav ul li a i {
+        padding-right: 3px;
+        /* Add right padding to the icon */
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .cal-container {
+        padding: 20px; /* Add some padding around the calendar on smaller screens */
+        height: 100%; /* Ensure the container takes the full height of the viewport */
+
+    }
+
+    #calendar {
+        width: 100%;
+        max-width: 100%; /* Make the calendar occupy the full width of the container on small screens */
+        margin: 0; /* Remove the margin to center the calendar properly */
+        flex-basis: 1;
+    }
+    header .spartan-icon {
+        max-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cal-container {
+        padding: 20px; /* Add some padding around the calendar on smaller screens */
+    }
+
+    #calendar {
+        width: 100%;
+        max-width: 100%; /* Make the calendar occupy the full width of the container on small screens */
+        margin: 0; /* Remove the margin to center the calendar properly */
+    }
+}
