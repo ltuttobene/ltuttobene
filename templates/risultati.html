@@ -33,7 +33,7 @@
                 <li><a href="/players"><i class="fas fa-users"></i>Players</a></li>
                 <li><a href="/calendar"><i class="fas fa-calendar"></i>Calendar</a></li>
                 <li><a href="/risultati"><i class="fas fa-risultati"></i>Risultati</a></li>
-                <li><a href="/votazione"><i class="fas fa-votazione"></i>Vota MVP</a></li>
+                <!-- <li><a href="/votazione"><i class="fas fa-votazione"></i>Vota MVP</a></li> -->
             </ul>
         </nav>
         <div class="page-container">
@@ -57,7 +57,11 @@
                     <h3>Giocatori Squadra B:</h3>
                         <p>{{ risultati['Giocatori Squadra B'] }}</p>
                     <h3>Marcatori:</h3>
-                        <p>{{ risultati['Marcatori'] }}</p>                                             
+                        <p>{{ risultati['Marcatori'] }}</p>     
+                    <h3>Assist:</h3>
+                        <p>{{ risultati['Assist'] }}</p>
+                    <h3>MVP:</h3>
+                        <p>{{ risultati['MVP'] }}</p>                                            
                 </div>
             {% endfor %}
         </div>
