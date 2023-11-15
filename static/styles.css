@@ -12,7 +12,7 @@ body {
 
 header {
     /*background-color: #2752fb;*/
-    background-color: black;
+    background-color: #232334;
     padding: 12px;
     padding: 12px;
     text-align: center;
@@ -29,7 +29,7 @@ header .spartan-icon {
 
 nav {
     /*background-color: #F8E019;*/
-    background-color: orangered;
+    background-color: #d92423;
     padding: 10px;
 }
 
@@ -108,7 +108,7 @@ nav ul li a i {
     font-size: 80px;
     text-align: center;
     animation: bounce 2.5s ease-in-out infinite;
-    color: #2752fb;
+    color: #232334;
     padding-bottom: 30px;
     font-family: "Roboto", Arial, sans-serif;
     font-weight:bold;
@@ -253,7 +253,7 @@ nav ul li a i {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
-    color: #2752fb;
+    color: #232334;
 }
 
 .form-element {
@@ -304,7 +304,7 @@ button[type="submit"]:focus {
 }
 
 footer {
-    background-color: #2752fb;
+    background-color: #232334;
     color: #fff;
     padding: 2px;
     text-align: center;
