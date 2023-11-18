@@ -44,7 +44,7 @@ df = pd.DataFrame(data[1:], columns=data[0])
 
 #Prepare risultati data 
 #Open the Google Spreadsheet
-spreadsheet = client.open("Magic")
+#spreadsheet = client.open("Magic")
 
 # Select the specific sheet within the spreadsheet
 sheet2 = spreadsheet.worksheet("sheet2")
@@ -54,6 +54,34 @@ data2 = sheet2.get_all_values()
 
 # Create a DataFrame using the fetched data
 df2 = pd.DataFrame(data2[1:], columns=data2[0])
+
+
+#Dati classifica marcatori
+#Open the Google Spreadsheet
+#spreadsheet = client.open("Magic")
+
+# Select the specific sheet within the spreadsheet
+sheet4 = spreadsheet.worksheet("Sheet4")
+
+# Fetch all the values from the sheet
+data4 = sheet4.get_all_values()
+
+# Create a DataFrame using the fetched data
+df4 = pd.DataFrame(data4[1:], columns=data4[0])
+
+
+#Dati classifica assistman
+#Open the Google Spreadsheet
+#spreadsheet = client.open("Magic")
+
+# Select the specific sheet within the spreadsheet
+sheet5 = spreadsheet.worksheet("Sheet5")
+
+# Fetch all the values from the sheet
+data5 = sheet5.get_all_values()
+
+# Create a DataFrame using the fetched data
+df5 = pd.DataFrame(data5[1:], columns=data5[0])
 
 ########## POLL VOTE CODE ##########
 if not os.path.exists("polls.csv"):
@@ -106,6 +134,26 @@ def risultati():
     
     # Render the risultati.html template and pass the risultati data
     return render_template("risultati.html", risultati=risultati_data)
+
+# Define a route to render the bomber_data page
+@app.route("/bomber")
+def bomber():
+    # Convert DataFrame to list of dictionaries
+    bomber_data = df4.to_dict(orient="records")
+
+    
+    # Render the bomber_data.html template and pass the risultati data
+    return render_template("bomber.html", bomber=bomber_data)
+
+# Define a route to render the bomber_data page
+@app.route("/assist")
+def assist():
+    # Convert DataFrame to list of dictionaries
+    assist_data = df5.to_dict(orient="records")
+
+    
+    # Render the bomber_data.html template and pass the risultati data
+    return render_template("assist.html", assist=assist_data)
 
 @app.route("/")
 def home():

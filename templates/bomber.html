@@ -6,9 +6,9 @@
         <!-- Address compatibility issues that may arise when displaying webpages in older versions of Internet Explorer -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Text on browser tab -->
-        <title>Magic Players</title>
-        <!-- CSS for players page -->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='players.css') }}">
+        <title>Magic Bomber</title>
+        <!-- CSS for Bomber page -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bomber.css') }}">
         <!-- For navbar icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- For mobile -->
@@ -42,33 +42,66 @@
             <div
                 class="description">
                 <!-- Description content -->
-                <h3>Statistiche Magicciani</h3>
+                <h3>Classifica marcatori</h3>
 
             </div>
         </div>
-        <div class="player-cards-container">
-            {% for player in players %}
-                <div class="player-card">
-                    <h3>{{ player['Name'] }}</h3>
-                    <p>Presenze:
-                        {{ player['Presenze'] }}</p>
-                    <p>Goals:
-                        {{ player['Goals'] }}</p>
-                    <p>Assists:
-                        {{ player['Assists'] }}</p>
-                    <p>Vittorie:
-                        {{ player['Vittorie'] }}</p>
-                    <p>Pareggi:
-                        {{ player['Pareggi'] }}</p>     
-                    <p>Sconfitte:
-                        {{ player['Sconfitte'] }}</p> 
-                    <p>Win Ratio:
-                        {{ player['Win Ratio'] }}</p>         
-                    <p>MVP:
-                        {{ player['MVP'] }}</p>                                     
-                </div>
+
+
+        <!-- Vecchia tabella, prima verisione
+        <div>
+        <table class="fluid-table">
+            <tr>
+              <th scope="col">Posizione</th>
+              <th scope="col">Calciatore</th>
+              <th scope="col">Gol</th>
+              <th scope="col">Presenze</th>
+              <th scope="col">Media Gol</th>
+            </tr>
+            
+
+            {% for bomber in bomber %}
+            <tr>
+              <td>{{ bomber['Posizione'] }}</td>
+              <td>{{ bomber['Calciatore'] }}</td>
+              <td>{{ bomber['Gol'] }}</td>
+              <td>{{ bomber['Partite'] }}</td>
+              <td>{{ bomber['Media Gol'] }}</td>
+            </tr>
             {% endfor %}
+            
+            
+          </table>
         </div>
+        -->
+
+
+        <div class="container">
+	
+            <div class="table">
+                <div class="table-header">
+                    <div class="header__item"><a id="name" class="filter__link" href="#">Posizione</a></div>
+                    <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Calciatore</a></div>
+                    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Gol</a></div>
+                    <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Presenze</a></div>
+                    <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Media Gol</a></div>
+                </div>
+                <div class="table-content">	
+                    {% for bomber in bomber %}
+                    <div class="table-row">		
+                        <div class="table-data">{{ bomber['Posizione'] }}</div>
+                        <div class="table-data">{{ bomber['Calciatore'] }}</div>
+                        <div class="table-data">{{ bomber['Gol'] }}</div>
+                        <div class="table-data">{{ bomber['Partite'] }}</div>
+                        <div class="table-data">{{ bomber['Media Gol'] }}</div>
+                    </div>
+                    {% endfor %}
+
+                </div>	
+            </div>
+        </div>
+
+
         <footer>
             <p>&copy; MAGIC F.C.</p>
         </footer>
